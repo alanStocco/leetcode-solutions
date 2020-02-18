@@ -13,10 +13,10 @@ class Solution(object):
         if not matrix: return []
         pacific,atlantic = set(),set()
         rows, cols = len(matrix),len(matrix[0])
-        for i in xrange(cols):
+        for i in range(cols):
             self.dfs(0,i,matrix,pacific,-1)
             self.dfs(rows-1,i,matrix,atlantic,-1)
-        for i in xrange(rows):
+        for i in range(rows):
             self.dfs(i,0,matrix,pacific,-1)
             self.dfs(i,cols-1,matrix,atlantic,-1)
         return list(pacific&atlantic)
